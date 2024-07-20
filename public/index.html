@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Jasa</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .sticky {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .menu-transition {
+            transition: max-height 0.3s ease-out;
+        }
+        .star-rating {
+            display: flex;
+            direction: row-reverse;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #f0f0f0;
+        }
+        .star-rating input {
+            display: none;
+        }
+        .star-rating label {
+            cursor: pointer;
+            color: #e3e3e3;
+        }
+        .star-rating input:checked ~ label,
+        .star-rating input:checked ~ label ~ label {
+            color: #fcd34d;
+        }
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #fcd34d;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+    <nav class="bg-white backdrop-blur-lg shadow-md sticky">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="img/logo.png" alt="Layanan Jasa Logo" class="w-32 h-auto">
+            </a>
+                <div class="hidden md:flex space-x-6">
+                <a href="#hero" class="text-gray-800 hover:text-blue-600 transition duration-300">Home</a>
+                <a href="#services" class="text-gray-800 hover:text-blue-600 transition duration-300">Layanan</a>
+                <a href="#about" class="text-gray-800 hover:text-blue-600 transition duration-300">Tentang Kami</a>
+                <a href="#contact" class="text-gray-800 hover:text-blue-600 transition duration-300">Kontak</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-gray-800 hover:text-blue-600 transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden max-h-0 overflow-hidden bg-white shadow-md menu-transition">
+            <a href="#hero" class="block px-4 py-3 text-gray-800 hover:bg-gray-200 transition duration-300">Home</a>
+            <a href="#services" class="block px-4 py-3 text-gray-800 hover:bg-gray-200 transition duration-300">Layanan</a>
+            <a href="#about" class="block px-4 py-3 text-gray-800 hover:bg-gray-200 transition duration-300">Tentang Kami</a>
+            <a href="#contact" class="block px-4 py-3 text-gray-800 hover:bg-gray-200 transition duration-300">Kontak</a>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <header id="hero" class="bg-blue-600 text-white">
+        <div class="container mx-auto px-6 py-24 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Layanan Jasa Terbaik</h1>
+                <p class="text-lg md:text-xl mb-6">Kami menawarkan layanan antar jemput kendaraan, laundry, pembersihan rumah, cuci kendaraan, pengantaran makanan, dan pengantaran paket. Dengan keahlian profesional, kami siap membantu memenuhi kebutuhan Anda!</p>
+                <a href="#services" class="inline-block bg-white text-blue-600 font-bold py-2 px-6 rounded-full hover:bg-blue-700 hover:text-white transition duration-300">Lihat Layanan</a>
+            </div>
+            <div class="md:w-1/2">
+                <img src="img/layanan.png" alt="Layanan Jasa" class="w-full rounded-lg shadow-lg">
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Layanan Kami</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:scale-105">
+                    <div class="flex items-center justify-center mb-4">
+                        <img src="img/motor-pickup-icon.png" alt="Jemput Kendaraan" class="w-24 h-24">
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-blue-600">Jemput Kendaraan</h3>
+                    <p class="text-gray-600 text-center mt-2">Layanan cepat dan aman untuk kebutuhan antar jemput Anda.</p>
+                    <a href="penjemputan.html" class="mt-4 inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Order Now</a>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:scale-105">
+                    <div class="flex items-center justify-center mb-4">
+                        <img src="img/loundry.png" alt="Cucian Bersih" class="w-24 h-24">
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-blue-600">Laundry</h3>
+                    <p class="text-gray-600 text-center mt-2">Cuci dan setrika pakaian Anda dengan layanan kami yang terpercaya.</p>
+                    <a href="laundry.html" class="mt-4 inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Order Now</a>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:scale-105">
+                    <div class="flex items-center justify-center mb-4">
+                        <img src="img/cleaning-icon.png" alt="Bersih Rumah" class="w-24 h-24">
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-blue-600">Home Cleaning</h3>
+                    <p class="text-gray-600 text-center mt-2">Tim profesional kami siap membantu menjaga kebersihan rumah Anda.</p>
+                    <a href="home-cleaning.html" class="mt-4 inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Order Now</a>
+                </div>
+                <!-- Service 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:scale-105">
+                    <div class="flex items-center justify-center mb-4">
+                        <img src="img/Cuci-Kendaraan.png" alt="Cuci Kendaraan" class="w-24 h-24">
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-blue-600">Vehicle Wash</h3>
+                    <p class="text-gray-600 text-center mt-2">Layanan pencucian kendaraan yang membuat kendaraan Anda bersih dan berkilau.</p>
+                    <a href="vehicle-wash.html" class="mt-4 inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Order Now</a>
+                </div>
+                <!-- Service 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:scale-105">
+                    <div class="flex items-center justify-center mb-4">
+                        <img src="img/food.png" alt="Antar Makanan" class="w-24 h-24">
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-blue-600">Food Delivery</h3>
+                    <p class="text-gray-600 text-center mt-2">Antar makanan favorit Anda dengan cepat dan aman.</p>
+                    <a href="food-delivery.html" class="mt-4 inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Order Now</a>
+                </div>
+                <!-- Service 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow transform hover:scale-105">
+                    <div class="flex items-center justify-center mb-4">
+                        <img src="img/paket.png" alt="Antar Paket" class="w-24 h-24">
+                    </div>
+                    <h3 class="text-xl font-semibold text-center text-blue-600">Package Delivery</h3>
+                    <p class="text-gray-600 text-center mt-2">Layanan antar paket yang cepat dan terpercaya.</p>
+                    <a href="package-delivery.html" class="mt-4 inline-block bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Tentang Kami</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center">
+                <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                    <h3 class="text-xl font-semibold mb-4">Profesional dan Terpercaya</h3>
+                    <p class="text-gray-600 mb-4">Kami adalah penyedia layanan jasa yang profesional dan terpercaya di DKI Jakarta. Dengan tim yang berpengalaman dan berdedikasi, kami siap memberikan pelayanan terbaik untuk memenuhi kebutuhan Anda.</p>
+                    <p class="text-gray-600 mb-4">Kami selalu berusaha untuk menjaga kualitas layanan dan kepuasan pelanggan. Kepercayaan Anda adalah prioritas kami.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="img/about-us.png" alt="Tentang Kami" class="w-full rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rating and Review Section -->
+    <section id="reviews" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Rating dan Ulasan</h2>
+            <div class="flex justify-center">
+                <form id="review-form" class="bg-white p-6 rounded-lg shadow-lg w-full md:w-1/2">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama:</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="mb-4">
+                        <label for="rating" class="block text-gray-700 text-sm font-bold mb-2">Rating:</label>
+                        <div class="star-rating">
+                            <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stars">☆</label>
+                            <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars">☆</label>
+                            <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars">☆</label>
+                            <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars">☆</label>
+                            <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star">☆</label>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="review" class="block text-gray-700 text-sm font-bold mb-2">Ulasan:</label>
+                        <textarea id="review" name="review" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Kirim Ulasan</button>
+                    </div>
+                </form>
+            </div>
+            <div id="submitted-reviews" class="mt-12">
+                <!-- Placeholder for submitted reviews -->
+            </div>
+        </div>
+    </section>
+   
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Kontak Kami</h2>
+            <div class="flex justify-center">
+                <form id="contact-form" class="bg-gray-50 p-6 rounded-lg shadow-lg w-full md:w-1/2">
+                    <div class="mb-4">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nama:</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Pesan:</label>
+                        <textarea id="message" name="message" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                    </div>
+                    <div class="flex justify-center">
+                        <button type="submit" class="bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition duration-300">Kirim Pesan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-200 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Layanan Jasa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('block');
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('block');
+                mobileMenu.style.maxHeight = '0';
+            }
+        });
+
+        document.getElementById('review-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const rating = document.querySelector('input[name="rating"]:checked').value;
+            const review = document.getElementById('review').value;
+
+            const reviewHTML = `
+                <div class="bg-white p-4 rounded-lg shadow-lg mb-4">
+                    <div class="flex items-center mb-2">
+                        <span class="font-bold text-lg">${name}</span>
+                        <div class="ml-4 flex">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</div>
+                    </div>
+                    <p class="text-gray-600">${review}</p>
+                </div>
+            `;
+            document.getElementById('submitted-reviews').insertAdjacentHTML('beforeend', reviewHTML);
+
+            // Clear form
+            document.getElementById('review-form').reset();
+        });
+    </script>
+</body>
+</html>
